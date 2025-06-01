@@ -1,27 +1,24 @@
 import CardContainer from "./card-container";
-import { getMovieData, MovieCard } from "./movie-card";
-import { getBookData, BookCard } from "./book-card";
+import { getGithubData, GithubCard } from "./github-card";
+import LeetcodeCard from "./leetcode-card";
 
 async function ActivityCard() {
-    const [movieData, bookData] = await Promise.all([
-        getMovieData(),
-        getBookData(),
-    ]);
+    const [githubData] = await Promise.all([getGithubData()]);
 
     return (
         <CardContainer title="Activity">
             <div className="text-muted-foreground space-y-6">
                 <div>
-                    <h3 className="text-sm font-medium mb-3 text-foreground">
-                        Last read book
+                    <h3 className="font-medium mb-3 text-foreground">
+                        Github Activity
                     </h3>
-                    <BookCard bookData={bookData} />
+                    <GithubCard githubData={githubData} />
                 </div>
                 <div>
-                    <h3 className="text-sm font-medium mb-3 text-foreground">
-                        Last watched movie
+                    <h3 className="font-medium mb-3 text-foreground">
+                        Leetcode Activity
                     </h3>
-                    <MovieCard movieData={movieData} />
+                    <LeetcodeCard />
                 </div>
             </div>
         </CardContainer>

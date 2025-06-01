@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
         hostname: 'images-na.ssl-images-amazon.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ghchart.rshah.org',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'leetcard.jacoblin.cool',
+        pathname: '/**',
+      },
     ],
   },
 };
